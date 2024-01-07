@@ -1,5 +1,8 @@
+import { Timestamp, timestamp } from "rxjs";
+
 export interface HousingLocation {
   id: number;
+  created_at: number;
   name: string;
   city: string;
   state: string;

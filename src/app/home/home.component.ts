@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { HousingLocationComponent } from "../housing-location/housing-location.component";
 import { HousingLocation } from "../housinglocation";
 import { HousingService } from "../housing.service";
+import { Subject, delay, map } from "rxjs";
 @Component({
   selector: "app-home",
   standalone: true,
@@ -25,7 +26,7 @@ import { HousingService } from "../housing.service";
 })
 export class HomeComponent implements OnInit {
   housingLocationList: HousingLocation[] = [];
-
+  private unsubscribe$ = new Subject<void>();
   constructor(private housingService: HousingService) {}
   ngOnInit(): void {
     this.housingService.getAllHousingLocation().subscribe({
@@ -37,5 +38,9 @@ export class HomeComponent implements OnInit {
         console.error("Error", err);
       },
     });
+  }
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

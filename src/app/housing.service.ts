@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class HousingService {
-  url = "http://localhost:3000/locations";
+  url = "https://x8ki-letl-twmt.n7.xano.io/api:zHpQu5MT/housinglocation";
 
   constructor(public http: HttpClient) {}
 

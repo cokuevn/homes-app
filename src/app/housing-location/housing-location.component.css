@@ -2,12 +2,12 @@
   background: var(--accent-color);
   border-radius: 30px;
   padding-bottom: 30px;
-  opacity: 0.8;
+  opacity: 0.92;
   cursor: pointer;
 }
 .listing:hover {
   opacity: 1;
-  transition: 1s;
+  transition: 0.5s;
 }
 .listing-heading {
   color: var(--primary-color);
@@ -26,7 +26,6 @@
   content: url("/assets/location-pin.svg") / "";
 }
 section.listing a {
-  padding-left: 20px;
   text-decoration: none;
   color: var(--primary-color);
 }
